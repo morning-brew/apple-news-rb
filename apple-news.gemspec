@@ -6,12 +6,12 @@ require 'apple-news/version'
 Gem::Specification.new do |spec|
   spec.name          = "apple-news"
   spec.version       = AppleNews::VERSION
-  spec.authors       = ["Ryan LeFevre"]
-  spec.email         = ["ryan@hodinkee.com"]
+  spec.authors       = ["Benjamin Hargett", "Ryan LeFevre"]
+  spec.email         = ["hargettbenjamin@gmail.com", "ryan@hodinkee.com"]
 
   spec.summary       = %q{Fully-featured library for working with the Apple News API.}
   spec.description   = %q{Fully-featured library for fetching and creating content with the Apple News API.}
-  spec.homepage      = "https://github.com/hodinkee/apple-news-rb"
+  spec.homepage      = "https://github.com/bharget/apple-news-rb"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
