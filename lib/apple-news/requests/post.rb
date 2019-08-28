@@ -36,14 +36,14 @@ module AppleNews
       end
 
       def content_body
-        body = multipart.body_stream.read
+        body = multipart.body_stream.read.gsub("\"article.json\"", "article.json")
         multipart.body_stream.rewind
         body
       end
 
       def authorization
         security = AppleNews::Security.new('POST', @url, @config)
-        security.content_type = "multipart/form-data; boundary=-----------RubyMultipartPost"
+        security.content_type = "multipart/form-data; boundary=#{multipart.boundary}"
         security.content_body = content_body
 
         security.authorization
@@ -52,7 +52,7 @@ module AppleNews
       def headers
         {
           'Authorization' => authorization,
-          'Content-Type' => "multipart/form-data; boundary=-----------RubyMultipartPost"
+          'Content-Type' => "multipart/form-data; boundary=#{multipart.boundary}"
         }
       end
     end

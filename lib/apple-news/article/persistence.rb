@@ -7,9 +7,8 @@ module AppleNews
         def save!
           request = Request::Post.new(endpoint_url, config)
           request.fields = {
-            'metadata' => metadata_field,
             'article.json' => document_json
-          }.merge(@files)
+          }.merge(@files || {})
 
           resp = request.call
 
