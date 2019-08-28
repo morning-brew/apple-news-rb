@@ -35,7 +35,7 @@ require "apple-news/request"
 require "apple-news/section"
 require "apple-news/security"
 
-module AppleNews
+module AppleNewsClient
   extend self
 
   def config

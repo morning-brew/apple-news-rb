@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Property
     class MapSpan < Base
       required_properties :latitude_delta, :longitude_delta

@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Style
     class Shadow < Base
       required_properties :color, :radius

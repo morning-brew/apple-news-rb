@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Style
     module Fill
       extend ActiveSupport::Concern

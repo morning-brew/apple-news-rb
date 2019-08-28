@@ -6,13 +6,13 @@ require "apple-news/components/scalable_image"
 require "apple-news/components/container"
 Dir["#{File.dirname(__FILE__)}/components/*.rb"].each { |path| require path }
 
-module AppleNews
+module AppleNewsClient
   module Component
     extend self
 
     def factory(data)
       return if data.nil?
-      
+
       components.each do |component|
         if component.role == data[:role]
           return component.new(data)

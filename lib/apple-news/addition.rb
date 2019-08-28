@@ -1,13 +1,13 @@
 require 'apple-news/additions/base'
 Dir["#{File.dirname(__FILE__)}/additions/*.rb"].each { |path| require path }
 
-module AppleNews
+module AppleNewsClient
   module Addition
     extend self
 
     def factory(data)
       return if data.nil?
-      
+
       additions.each do |addition|
         if addition.type == data[:type]
           return addition.new(data)

@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Behavior
     class BackgroundMotion < Base
       type "background_motion"

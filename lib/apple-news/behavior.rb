@@ -1,13 +1,13 @@
 require 'apple-news/behaviors/base'
 Dir["#{File.dirname(__FILE__)}/behaviors/*.rb"].each { |path| require path }
 
-module AppleNews
+module AppleNewsClient
   module Behavior
     extend self
 
     def factory(data)
       return if data.nil?
-      
+
       behaviors.each do |behavior|
         if behavior.type == data[:type]
           return behavior.new(data)

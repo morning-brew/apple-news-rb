@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Property
     class CaptionDescriptor < Base
       required_property :text

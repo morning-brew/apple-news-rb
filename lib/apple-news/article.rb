@@ -2,7 +2,7 @@ require 'apple-news/article/attachments'
 require 'apple-news/article/persistence'
 require 'apple-news/document'
 
-module AppleNews
+module AppleNewsClient
   class Article
     include Attachments
     include Persistence
@@ -16,7 +16,7 @@ module AppleNews
     attr_reader :id, :type, :title, :share_url, :state, :warnings, :created_at, :modified_at
     attr_accessor :document
 
-    def initialize(id = nil, data = {}, config = AppleNews.config)
+    def initialize(id = nil, data = {}, config = AppleNewsClient.config)
       assign_data(data)
 
       @id = id
@@ -46,7 +46,7 @@ module AppleNews
       set_read_only_properties(data)
       load_properties(data)
 
-      @document = document.is_a?(AppleNews::Document) ? document : Document.new(document)
+      @document = document.is_a?(AppleNewsClient::Document) ? document : Document.new(document)
     end
   end
 end

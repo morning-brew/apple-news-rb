@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Property
     class ContentInset < Base
       optional_properties :bottom, :left, :right, :top

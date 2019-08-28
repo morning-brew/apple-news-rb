@@ -1,11 +1,11 @@
-module AppleNews
+module AppleNewsClient
   class Section
     include Resource
     include Links
 
     attr_reader :id, :type, :name, :is_default, :links, :created_at, :modified_at, :share_url
 
-    def initialize(id, data = nil, config = AppleNews.config)
+    def initialize(id, data = nil, config = AppleNewsClient.config)
       @id = id
       @config = config
       @resource_path = '/sections'

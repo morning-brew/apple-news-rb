@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AppleNews::Configuration do
+describe AppleNewsClient::Configuration do
 
   let(:attributes) do
     {
@@ -11,18 +11,18 @@ describe AppleNews::Configuration do
   end
 
   it 'can be created via an attributes hash' do
-    config = AppleNews::Configuration.new(attributes)
+    config = AppleNewsClient::Configuration.new(attributes)
     expect(config.channel_id).to eq('12345')
   end
 
   it 'has a default value for api_base' do
-    config = AppleNews::Configuration.new(attributes)
+    config = AppleNewsClient::Configuration.new(attributes)
     expect(config.api_base).to eq('https://news-api.apple.com')
   end
 
   it 'returns the configured channel' do
-    allow_any_instance_of(AppleNews::Channel).to receive(:fetch_data).and_return('data' => {})
-    config = AppleNews::Configuration.new(attributes)
+    allow_any_instance_of(AppleNewsClient::Channel).to receive(:fetch_data).and_return('data' => {})
+    config = AppleNewsClient::Configuration.new(attributes)
     expect(config.channel.id).to eq('12345')
   end
 

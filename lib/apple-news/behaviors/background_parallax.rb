@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Behavior
     class BackgroundParallax < Base
       type "background_parallax"

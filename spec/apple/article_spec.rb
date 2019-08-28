@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AppleNews::Article do
+describe AppleNewsClient::Article do
 
   let(:fixture_data) do
     {
@@ -29,34 +29,34 @@ describe AppleNews::Article do
   end
 
   it 'retains false values' do
-    article = AppleNews::Article.new
+    article = AppleNewsClient::Article.new
     article.is_preview = false
     expect(article.as_json['isPreview']).to be(false)
   end
 
   it 'supports passing in a document' do
-    document = AppleNews::Document.new(title: 'My Article')
-    article = AppleNews::Article.new('111', document: document)
+    document = AppleNewsClient::Document.new(title: 'My Article')
+    article = AppleNewsClient::Article.new('111', document: document)
     expect(article.document).to be(document)
     expect(article.document.title).to eq('My Article')
   end
 
   it 'will create a document if one is in the data hash' do
-    article = AppleNews::Article.new('111', 'document' => { title: 'My Article' })
-    expect(article.document).to be_a(AppleNews::Document)
+    article = AppleNewsClient::Article.new('111', 'document' => { title: 'My Article' })
+    expect(article.document).to be_a(AppleNewsClient::Document)
     expect(article.document.title).to eq('My Article')
   end
 
   it 'will ensure a document if one is not in the data hash' do
-    article = AppleNews::Article.new('111', type: 'article')
-    expect(article.document).to be_a(AppleNews::Document)
+    article = AppleNewsClient::Article.new('111', type: 'article')
+    expect(article.document).to be_a(AppleNewsClient::Document)
   end
 
   context 'created with only an id' do
-    let(:article) { AppleNews::Article.new('111') }
+    let(:article) { AppleNewsClient::Article.new('111') }
 
     before do
-      allow_any_instance_of(AppleNews::Article).to receive(:fetch_data).and_return('data' => fixture_data)
+      allow_any_instance_of(AppleNewsClient::Article).to receive(:fetch_data).and_return('data' => fixture_data)
     end
 
     it 'will fetch attributes from the api' do
@@ -65,12 +65,12 @@ describe AppleNews::Article do
     end
 
     it 'will use the default config' do
-      expect(article.config).to be(AppleNews.config)
+      expect(article.config).to be(AppleNewsClient.config)
     end
   end
 
   context 'created with id and a data hash' do
-    let(:article) { AppleNews::Article.new('111', fixture_data) }
+    let(:article) { AppleNewsClient::Article.new('111', fixture_data) }
 
     it 'will set data attributes without fetching' do
       expect(article.id).to eq('111')
@@ -78,13 +78,13 @@ describe AppleNews::Article do
     end
 
     it 'will use the default config' do
-      expect(article.config).to be(AppleNews.config)
+      expect(article.config).to be(AppleNewsClient.config)
     end
   end
 
   context 'created with id, data hash, and custom config' do
-    let(:config) { AppleNews::Configuration.new }
-    let(:article) { AppleNews::Article.new('111', fixture_data, config) }
+    let(:config) { AppleNewsClient::Configuration.new }
+    let(:article) { AppleNewsClient::Article.new('111', fixture_data, config) }
 
     it 'will set data attributes without fetching' do
       expect(article.id).to eq('111')

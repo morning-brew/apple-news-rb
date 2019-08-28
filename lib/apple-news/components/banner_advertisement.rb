@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Component
     class BannerAdvertisement < Base
       role "banner_advertisement"

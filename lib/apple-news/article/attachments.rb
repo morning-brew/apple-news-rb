@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   class Article
     module Attachments
       extend ActiveSupport::Concern

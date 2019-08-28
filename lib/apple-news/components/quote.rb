@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Component
     class Quote < Base
       include Text

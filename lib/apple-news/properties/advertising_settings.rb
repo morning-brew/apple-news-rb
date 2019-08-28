@@ -1,6 +1,6 @@
 require 'apple-news/properties/advertising_layout'
 
-module AppleNews
+module AppleNewsClient
   module Property
     class AdvertisingSettings < Base
       optional_property :frequency

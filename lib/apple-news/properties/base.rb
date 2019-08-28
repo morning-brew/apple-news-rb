@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Property
     class Base
       include Properties

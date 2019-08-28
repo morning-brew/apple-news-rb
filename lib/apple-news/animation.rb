@@ -1,13 +1,13 @@
 require 'apple-news/animations/base'
 Dir["#{File.dirname(__FILE__)}/animations/*.rb"].each { |path| require path }
 
-module AppleNews
+module AppleNewsClient
   module Animation
     extend self
 
     def factory(data)
       return if data.nil?
-      
+
       animations.each do |animation|
         if animation.type == data[:type]
           return animation.new(data)

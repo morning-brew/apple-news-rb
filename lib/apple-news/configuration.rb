@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   class Configuration
     attr_accessor :channel_id, :api_key_id, :api_key_secret, :api_base
 
@@ -10,7 +10,7 @@ module AppleNews
     end
 
     def channel
-      AppleNews::Channel.new(channel_id, nil, self)
+      AppleNewsClient::Channel.new(channel_id, nil, self)
     end
   end
 end

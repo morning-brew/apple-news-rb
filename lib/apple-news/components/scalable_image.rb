@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Component
     module ScalableImage
       extend ActiveSupport::Concern

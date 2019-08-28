@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   class Channel
     include Resource
     include Links
@@ -7,12 +7,12 @@ module AppleNews
                 :default_section, :share_url
 
     def self.current
-      warn 'DEPRECATION WARNING: `AppleNews::Channel.current` is deprecated. '\
-           'Please use `AppleNews.config.channel` instead.'
-      AppleNews.config.channel
+      warn 'DEPRECATION WARNING: `AppleNewsClient::Channel.current` is deprecated. '\
+           'Please use `AppleNewsClient.config.channel` instead.'
+      AppleNewsClient.config.channel
     end
 
-    def initialize(id, data = nil, config = AppleNews.config)
+    def initialize(id, data = nil, config = AppleNewsClient.config)
       @id = id
       @config = config
       @resource_path = '/channels'

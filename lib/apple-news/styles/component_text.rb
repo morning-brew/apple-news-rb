@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Style
     class ComponentText < Text
       optional_properties :drop_cap_style, :first_line_indent, :hanging_punctuation, :hyphenation,

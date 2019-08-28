@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Style
     class DropCap < Base
       required_property :number_of_lines

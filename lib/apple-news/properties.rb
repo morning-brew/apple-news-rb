@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Properties
     extend ActiveSupport::Concern
 

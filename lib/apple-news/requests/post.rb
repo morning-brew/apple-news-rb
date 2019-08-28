@@ -1,10 +1,10 @@
-module AppleNews
+module AppleNewsClient
   module Request
     class Post
       attr_reader :url
       attr_accessor :fields
 
-      def initialize(url, config = AppleNews.config)
+      def initialize(url, config = AppleNewsClient.config)
         @config = config
         @url = URI::parse(File.join(@config.api_base, url))
         @fields = {}
@@ -42,7 +42,7 @@ module AppleNews
       end
 
       def authorization
-        security = AppleNews::Security.new('POST', @url, @config)
+        security = AppleNewsClient::Security.new('POST', @url, @config)
         security.content_type = "multipart/form-data; boundary=#{multipart.boundary}"
         security.content_body = content_body
 

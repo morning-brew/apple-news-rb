@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Property
     class Anchor < Base
       required_property :target_anchor_position

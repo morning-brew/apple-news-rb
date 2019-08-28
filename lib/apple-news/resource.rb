@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Resource
     extend ActiveSupport::Concern
 
@@ -14,7 +14,7 @@ module AppleNews
       end
 
       def get_request(path, params = {})
-        AppleNews::Request::Get.new(path, config).call(params)
+        AppleNewsClient::Request::Get.new(path, config).call(params)
       end
 
       private

@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   class Article
     module Persistence
       extend ActiveSupport::Concern

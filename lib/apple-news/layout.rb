@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   class Layout
     include Properties
 

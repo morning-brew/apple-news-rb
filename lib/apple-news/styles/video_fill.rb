@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Style
     class VideoFill < Base
       required_property :type, "video"

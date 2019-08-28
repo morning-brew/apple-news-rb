@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AppleNews::Channel do
+describe AppleNewsClient::Channel do
 
   let(:fixture_data) do
     {
@@ -14,10 +14,10 @@ describe AppleNews::Channel do
   end
 
   context 'created with only an id' do
-    let(:channel) { AppleNews::Channel.new('111') }
+    let(:channel) { AppleNewsClient::Channel.new('111') }
 
     before do
-      allow_any_instance_of(AppleNews::Channel).to receive(:fetch_data).and_return('data' => fixture_data)
+      allow_any_instance_of(AppleNewsClient::Channel).to receive(:fetch_data).and_return('data' => fixture_data)
     end
 
     it 'will fetch attributes from the api' do
@@ -26,12 +26,12 @@ describe AppleNews::Channel do
     end
 
     it 'will use the default config' do
-      expect(channel.config).to be(AppleNews.config)
+      expect(channel.config).to be(AppleNewsClient.config)
     end
   end
 
   context 'created with id and a data hash' do
-    let(:channel) { AppleNews::Channel.new('111', fixture_data) }
+    let(:channel) { AppleNewsClient::Channel.new('111', fixture_data) }
 
     it 'will set data attributes without fetching' do
       expect(channel.type).to eq('channel')
@@ -39,13 +39,13 @@ describe AppleNews::Channel do
     end
 
     it 'will use the default config' do
-      expect(channel.config).to be(AppleNews.config)
+      expect(channel.config).to be(AppleNewsClient.config)
     end
   end
 
   context 'created with id, data hash, and custom config' do
-    let(:config) { AppleNews::Configuration.new }
-    let(:channel) { AppleNews::Channel.new('111', fixture_data, config) }
+    let(:config) { AppleNewsClient::Configuration.new }
+    let(:channel) { AppleNewsClient::Channel.new('111', fixture_data, config) }
 
     it 'will set data attributes without fetching' do
       expect(channel.type).to eq('channel')
@@ -57,13 +57,13 @@ describe AppleNews::Channel do
     end
 
     it 'will use the custom config when loading sections' do
-      allow_any_instance_of(AppleNews::Section).to receive(:fetch_data).and_return('data' => {})
+      allow_any_instance_of(AppleNewsClient::Section).to receive(:fetch_data).and_return('data' => {})
       section = channel.default_section
       expect(section.config).to be(config)
     end
 
     it 'will load and hydrate articles' do
-      allow_any_instance_of(AppleNews::Article).to receive(:fetch_data).and_return('data' => {})
+      allow_any_instance_of(AppleNewsClient::Article).to receive(:fetch_data).and_return('data' => {})
       expect(channel).to receive(:get_request).and_return(
         'data' => [{ 'id' => '123', 'type' => 'article', 'title' => 'Test Article' }]
       )

@@ -1,13 +1,13 @@
 require 'apple-news/scenes/base'
 Dir["#{File.dirname(__FILE__)}/scenes/*.rb"].each { |path| require path }
 
-module AppleNews
+module AppleNewsClient
   module Scene
     extend self
 
     def factory(data)
       return if data.nil?
-      
+
       scenes.each do |scene|
         if scene.type == data[:type]
           return scene.new(data)

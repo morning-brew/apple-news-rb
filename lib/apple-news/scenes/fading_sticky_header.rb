@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Scene
     class FadingStickyHeader < Base
       type "fading_sticky_header"

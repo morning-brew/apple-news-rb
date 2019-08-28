@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Property
     class MapItem < Base
       required_properties :latitude, :longitude

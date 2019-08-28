@@ -1,6 +1,6 @@
 require 'apple-news/components/container'
 
-module AppleNews
+module AppleNewsClient
   module Component
     class Chapter < Container
       role "chapter"

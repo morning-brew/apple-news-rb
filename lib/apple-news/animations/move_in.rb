@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Animation
     class MoveIn < Base
       type "move_in"

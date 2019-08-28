@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Style
     class LinearGradientFill < Base
       include GradientFill

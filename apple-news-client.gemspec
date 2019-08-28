@@ -5,7 +5,7 @@ require 'apple-news/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "apple-news-client"
-  spec.version       = AppleNews::VERSION
+  spec.version       = AppleNewsClient::VERSION
   spec.authors       = ["Benjamin Hargett", "Ryan LeFevre"]
   spec.email         = ["hargettbenjamin@gmail.com", "ryan@hodinkee.com"]
 

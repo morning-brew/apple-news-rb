@@ -1,11 +1,11 @@
 require 'base64'
 require 'openssl'
 
-module AppleNews
+module AppleNewsClient
   class Security
     attr_accessor :method, :url, :content_type, :content_body
 
-    def initialize(method, url, config = AppleNews.config)
+    def initialize(method, url, config = AppleNewsClient.config)
       @method = method.upcase
       @url = url
       @config = config

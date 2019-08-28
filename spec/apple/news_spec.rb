@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe AppleNews do
+describe AppleNewsClient do
   it 'has a version number' do
-    expect(AppleNews::VERSION).not_to be nil
+    expect(AppleNewsClient::VERSION).not_to be nil
   end
 end

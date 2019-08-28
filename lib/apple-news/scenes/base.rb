@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Scene
     class Base
       include Properties

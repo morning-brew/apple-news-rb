@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Animation
     class ScaleFade < Base
       type "scale_fade"

@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   module Style
     class TextStroke < Base
       required_property :color

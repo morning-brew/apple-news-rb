@@ -1,4 +1,4 @@
-module AppleNews
+module AppleNewsClient
   class Document
     include Properties
 
