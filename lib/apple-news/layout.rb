@@ -3,6 +3,6 @@ module AppleNewsClient
     include Properties
 
     required_properties :columns, :width
-    optional_properties :gutter, :margin, :ignoreDocumentMargin, :behavior
+    optional_properties :gutter, :margin, :ignoreDocumentMargin
   end
 end
