@@ -1,13 +1,15 @@
 # Apple News
 
-A fully featured gem for building Apple News documents and interfacing with the Apple News API.
+A fully featured gem for building Apple News documents and interfacing with the Apple News API. Used in production at Morning Brew.
+
+Forked from `hodinkee/apple-news-rb`.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'apple-news'
+gem 'apple-news-client'
 ```
 
 And then execute:
@@ -16,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install apple-news
+    $ gem install apple-news-client
 
 ## Configuration
 
