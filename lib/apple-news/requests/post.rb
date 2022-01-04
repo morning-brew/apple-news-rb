@@ -18,7 +18,6 @@ module AppleNewsClient
         # The API can be really slow, sometimes.
         http.read_timeout = 120
 
-
         res = http.post(@url, content_body, headers)
         JSON.parse(res.body)
       end
@@ -36,7 +35,7 @@ module AppleNewsClient
       end
 
       def content_body
-        body = multipart.body_stream.read.gsub("\"article.json\"", "article.json")
+        body = multipart.body_stream.read.gsub("\"article.json\"", "article.json").gsub("name=\"metadata\"", "name=metadata")
         multipart.body_stream.rewind
         body
       end
